@@ -10,7 +10,6 @@ Ce dossier sera complété avec le projet Android Studio de démarrage.
 4. Lancer sur émulateur Pixel 8 (API 26+) ou téléphone réel
 
 ## Ce qui est fourni
-
 - `build.gradle.kts` avec toutes les dépendances déclarées
 - Structure de packages vide
 - `Models.kt` avec les squelettes des data classes à compléter
