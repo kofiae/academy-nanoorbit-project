@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.sp
 import com.efrei.nanoorbit.data.mock.MockData
 import com.efrei.nanoorbit.data.models.*
 
-// ── Couleur selon le statut du satellite ──────────────────────────────────────
+// Couleur selon le statut du satellite 
 fun StatutSatellite.couleur(): Color = when (this) {
     StatutSatellite.OPERATIONNEL -> Color(0xFF2E7D32)  // vert
     StatutSatellite.EN_VEILLE    -> Color(0xFFF57C00)  // orange
@@ -22,7 +22,7 @@ fun StatutSatellite.couleur(): Color = when (this) {
     StatutSatellite.DESORBITE    -> Color(0xFF757575)  // gris
 }
 
-// ── StatusBadge ───────────────────────────────────────────────────────────────
+// StatusBadge 
 // Q2 : On utilise une enum class et pas une String libre car une String
 // permettrait des valeurs invalides ("operationnel", "Opérationnel ").
 // L'enum garantit exactement les mêmes valeurs que le CHECK Oracle.
@@ -56,7 +56,7 @@ fun StatusBadge(
     }
 }
 
-// ── SatelliteCard ─────────────────────────────────────────────────────────────
+// SatelliteCard 
 @Composable
 fun SatelliteCard(
     satellite: Satellite,
@@ -80,7 +80,7 @@ fun SatelliteCard(
         )
     ) {
         Row(
-            modifier = Modifier.padding(16.dp),
+            modifier = Modifier.padding(12.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
@@ -101,6 +101,13 @@ fun SatelliteCard(
             }
 
             Column(modifier = Modifier.weight(1f)) {
+                // ID satellite en petit au-dessus du nom
+                Text(
+                    text = satellite.idSatellite,
+                    fontSize = 10.sp,
+                    letterSpacing = 1.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
                 Text(
                     text = satellite.nomSatellite,
                     fontSize = 15.sp,
@@ -110,7 +117,6 @@ fun SatelliteCard(
                     else
                         MaterialTheme.colorScheme.onSurface
                 )
-                Spacer(Modifier.height(2.dp))
                 Text(
                     text = "${orbite.typeOrbite.label} · ${orbite.altitude} km",
                     fontSize = 12.sp,
@@ -133,7 +139,7 @@ fun SatelliteCard(
     }
 }
 
-// ── FenetreCard ───────────────────────────────────────────────────────────────
+// FenetreCard 
 @Composable
 fun FenetreCard(
     fenetre: FenetreCom,
@@ -211,7 +217,7 @@ fun FenetreCard(
     }
 }
 
-// ── InstrumentItem ────────────────────────────────────────────────────────────
+// InstrumentItem 
 @Composable
 fun InstrumentItem(
     instrument: Instrument,
@@ -263,7 +269,7 @@ fun InstrumentItem(
     }
 }
 
-// ── Previews ──────────────────────────────────────────────────────────────────
+// Previews 
 @Preview(showBackground = true, name = "StatusBadge — tous les statuts")
 @Composable
 fun PreviewStatusBadge() {
