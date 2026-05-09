@@ -2,7 +2,6 @@ package com.efrei.nanoorbit.data.repository
 
 import com.efrei.nanoorbit.data.api.NanoOrbitApi
 import com.efrei.nanoorbit.data.api.RetrofitClient
-import com.efrei.nanoorbit.data.api.RetrofitClient.api
 import com.efrei.nanoorbit.data.mock.MockData
 import com.efrei.nanoorbit.data.models.*
 import kotlinx.coroutines.delay
@@ -15,6 +14,7 @@ import kotlinx.coroutines.delay
 // les données locales restent accessibles.
 
 class NanoOrbitRepository {
+    private val api: NanoOrbitApi = RetrofitClient.api
 
     suspend fun getSatellites(): List<Satellite> {
         return try {
