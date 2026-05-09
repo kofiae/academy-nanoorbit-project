@@ -4,6 +4,13 @@ import com.efrei.nanoorbit.data.mock.MockData
 import com.efrei.nanoorbit.data.models.*
 import kotlinx.coroutines.delay
 
+// LIEN ALTN83 Q3 : cette stratégie répond à la question Q3 Phase 1 ALTN83
+// "Comment Singapour peut-il continuer à planifier si le serveur central
+// est indisponible ?" → En Phase 3, on ajoutera Room (Cache-First) :
+// le Repository lira d'abord le cache local, puis mettra à jour
+// depuis le réseau en arrière-plan. Si le réseau est indisponible,
+// les données locales restent accessibles.
+
 class NanoOrbitRepository {
 
     suspend fun getSatellites(): List<Satellite> {

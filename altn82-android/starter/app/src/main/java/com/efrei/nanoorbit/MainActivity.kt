@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.efrei.nanoorbit.ui.dashboard.DashboardScreen
+import com.efrei.nanoorbit.ui.navigation.AppNavigation
 import com.efrei.nanoorbit.ui.theme.NanoOrbitGroundControlTheme
 
 class MainActivity : ComponentActivity() {
@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             NanoOrbitGroundControlTheme {
-                DashboardScreen()
+                AppNavigation()
             }
         }
     }
